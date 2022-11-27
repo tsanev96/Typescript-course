@@ -1,4 +1,4 @@
-function add(num1: number, num2: number, printResult: boolean, phrase: string) {
+function add(num1: number, num2: number, printRes: boolean, phrase: string) {
   console.log(typeof num1);
   // javascript way during run time
   if (typeof num1 !== "number" && typeof num2 === "number") {
@@ -7,7 +7,7 @@ function add(num1: number, num2: number, printResult: boolean, phrase: string) {
 
   const result = num1 + num2;
 
-  if (printResult) {
+  if (printRes) {
     console.log(phrase + result);
   }
 
