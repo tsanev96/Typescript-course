@@ -1,32 +1,33 @@
-class Department {
-  public name: string;
-  private employees: string[] = []; // private property that can be accessed only from inside the class
+namespace DepartmentNamespace {
+  class Department {
+    public name: string;
+    private employees: string[] = []; // private property that can be accessed only from inside the class
 
-  constructor(n: string) {
-    this.name = n;
+    constructor(n: string) {
+      this.name = n;
+    }
+
+    describe(this: Department) {
+      console.log(`This is department ${this.name}`);
+    }
+
+    addEmployee(employee: string) {
+      this.employees.push(employee);
+    }
+
+    printEmployeeInformation() {
+      console.log(this.employees.length);
+      console.log(this.employees);
+    }
   }
 
-  describe(this: Department) {
-    console.log(`This is department ${this.name}`);
-  }
+  const financialDepartment = new Department("Financial");
 
-  addEmployee(employee: string) {
-    this.employees.push(employee);
-  }
+  financialDepartment.describe();
 
-  printEmployeeInformation() {
-    console.log(this.employees.length);
-    console.log(this.employees);
-  }
+  financialDepartment.addEmployee("Radoslav");
+  financialDepartment.addEmployee("Ivelina");
 }
-
-const financialDepartment = new Department("Financial");
-
-financialDepartment.describe();
-
-financialDepartment.addEmployee("Radoslav");
-financialDepartment.addEmployee("Ivelina");
-
 // financialDepartment.employees[2] = "Not good"; // we wamt to avoid this
 
 // converted to ES5

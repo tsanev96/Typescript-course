@@ -1,10 +1,12 @@
-class Department {
-  name: string = "Default";
+namespace DepartmentNamespace {
+  class Department {
+    name: string = "Default";
 
-  constructor(n: string) {
-    this.name = n;
+    constructor(n: string) {
+      this.name = n;
+    }
   }
-}
 
-const financialDepartment = new Department("Financial");
-console.log(financialDepartment);
+  const financialDepartment = new Department("Financial");
+  console.log(financialDepartment);
+}
